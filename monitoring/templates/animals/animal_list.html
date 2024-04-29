@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+<!-- Успадковуємо від базового шаблону -->
+
+{% block content %}
+<div class="listOfAnimals">
+
+	{% if animals %}
+		<div class="listAnimals">
+			<h2>Animal List</h2>
+			<ul>
+				{% for animal in animals %}
+				<li>
+					<span>{{ animal.name }} - {{ animal.species }}</span>
+					<div>
+						<a href="{% url 'animal_profile' animal.id %}">View profile</a>
+						<a href="{% url 'update_animal' animal.id %}">Edit</a>
+						<a href="{% url 'delete_animal' animal.id %}" >Delete</a>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	{% else %}
+		<div class="noFoundAnimals">
+			{% load static %}
+			<img src="{% static 'images/404.png' %}" alt="">
+			<div class="textNotFoundAnimals">
+				<h1>No animals found!</h1>
+				<p>To create a profile for an animal, you need to go to the page for creating an animal profile!</p>
+				<a href="{% url 'create_animal' %}">Add New Animal</a>
+			</div>
+		</div>
+	{% endif %}
+</div>
+{% endblock %} {% comment %} href="{% url 'update_animal' animal.id %}" href="{%
+url 'delete_animal' animal.id %}" {% endcomment %}

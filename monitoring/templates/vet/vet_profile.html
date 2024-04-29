@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="profile-vet">
+	<h2>Vet Profile: {{ vet.name }}</h2>  <!-- Заголовок з ім'ям лікаря -->
+<p>Specialization: {{ vet.specialization }}</p>  <!-- Спеціалізація -->
+<p>Contact Information: {{ vet.contact_info }}</p>  <!-- Контактна інформація -->
+
+</div>
+
+{% endblock %}

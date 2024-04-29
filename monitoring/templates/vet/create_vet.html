@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<div class="profile-vet">
+	<h2>Create Vet Profile</h2>
+	<!-- Заголовок -->
+	<form method="post">
+		<!-- Форма для створення лікаря -->
+		{% csrf_token %}
+		<!-- Захист CSRF -->
+		{{ form.as_p }}
+		<!-- Відображаємо поля форми -->
+		<button type="submit">Create</button>
+		<!-- Кнопка для підтвердження -->
+	</form>
+</div>
+
+{% endblock %}

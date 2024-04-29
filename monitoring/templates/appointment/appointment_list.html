@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="appointment-list">
+	{% if appointments %}
+	<h2>Appointment List</h2> 
+	<ul>
+			{% for appointment in appointments %}
+			<li>
+					{{ appointment.date }}: {{ appointment.animal.name }} with Dr. {{ appointment.vet.name }}  <!-- Інформація про запис -->
+					- Reason: {{ appointment.reason }}
+			</li>
+			{% endfor %}
+	</ul>
+	{% else %}
+	<h2>Not found appointment!</h2>
+	{% endif %}
+</div> 
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+<div class="vet-list">
+	{% if vets %}
+	<h2>Vet List</h2>
+	<ul>
+		{% for vet in vets %}
+		<li>
+			<span> {{ vet.name }} - {{ vet.specialization }} </span>
+			<a href="{% url 'vet_profile' vet.id %}">View profile</a>
+		</li>
+		{% endfor %}
+	</ul>
+	{% else %}
+	<h2>Not found vets!</h2>
+	{% endif %}
+</div>
+{% endblock %}

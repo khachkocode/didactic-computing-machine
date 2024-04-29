@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<div class="delete-animal">
+	<h2>Delete Animal Profile</h2>
+	<p>Are you sure you want to delete {{ animal.name }}?</p>
+	<form method="post">
+		{% csrf_token %}
+		<button type="submit">Delete</button>
+		<a href="{% url 'animal_list' %}">Cancel</a>
+	</form>
+</div>
+{% endblock %}

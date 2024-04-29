@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="create-appointment">
+	<h2>Create Appointment</h2>  <!-- Заголовок -->
+	<form method="post">  <!-- Метод POST для створення -->
+			{% csrf_token %}  <!-- Захист від CSRF -->
+			{{ form.as_p }}  <!-- Відображення форми -->
+			<button type="submit">Create</button>  <!-- Кнопка для підтвердження створення -->
+	</form>
+</div>
+
+{% endblock %}

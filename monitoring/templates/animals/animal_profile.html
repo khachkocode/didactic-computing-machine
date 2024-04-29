@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<div class="profile-animal">
+	<h2>Animal Profile: {{ animal.name }}</h2>
+	<div class="profile-info">
+		<p>Species: {{ animal.species }}</p>
+		<p>Age: {{ animal.age }} years</p>
+		<p>Height: {{ animal.height }} cm</p>
+		<p>Weight: {{ animal.weight }} kg</p>
+	</div>
+
+	<div class="medical-history">
+		<h3>Medical History</h3>
+		<p>{{ animal.medical_history }}</p>
+	</div>
+
+	<div class='profile-buttons'>
+		<a href="{% url 'create_animal_pdf' animal.id %}">Download PDF</a> 
+		<a href="{% url 'update_animal' animal.id %}">Edit</a>
+		<a href="{% url 'delete_animal' animal.id %}">Delete</a>
+	</div>
+</div>
+{% endblock %}

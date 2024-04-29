@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="loginForm">
+    <h2>Вхід</h2>
+    <form method="POST" >
+        {% csrf_token %}  <!-- для захисту від CSRF -->
+        {{ form.as_p }}
+        <button type="submit">Увійти</button>
+    </form>
+</div>
+{% endblock %}
