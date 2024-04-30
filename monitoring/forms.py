@@ -24,3 +24,6 @@ class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
         fields = ['date', 'reason', 'animal', 'vet']
+
+
+

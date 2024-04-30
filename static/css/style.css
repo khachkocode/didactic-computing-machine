@@ -642,12 +642,14 @@ header button a {
   border: none;
   border-radius: 4px;
   font-size: 16px;
+  border: 1px solid #767676;
 }
 .create-appointment form p select {
   padding: 10px;
   background: var(--gray);
   color: var(--white);
   border-radius: 4px;
+  border: 1px solid #767676;
 }
 .create-appointment form button {
   width: 100%;
@@ -665,6 +667,14 @@ header button a {
 .create-appointment form button:hover {
   transition: all 0.4s;
   box-shadow: 0px 0px 10px var(--red);
+}
+
+#datapicker {
+  padding: 10px;
+  background: var(--gray);
+  color: var(--white);
+  border-radius: 4px;
+  border: 1px solid #767676;
 }
 
 /*appointment*/

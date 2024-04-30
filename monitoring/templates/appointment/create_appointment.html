@@ -2,11 +2,35 @@
 
 {% block content %}
 <div class="create-appointment">
-	<h2>Create Appointment</h2>  <!-- Заголовок -->
-	<form method="post">  <!-- Метод POST для створення -->
-			{% csrf_token %}  <!-- Захист від CSRF -->
-			{{ form.as_p }}  <!-- Відображення форми -->
-			<button type="submit">Create</button>  <!-- Кнопка для підтвердження створення -->
+	<h2>Create Appointment</h2>
+	<form method="post">
+			{% csrf_token %}
+
+			<div class="form-group">
+				<label for="date">Date and Time</label>
+				<input type="datetime-local" name="date" class="form-control" id='datapicker' />
+		</div>
+
+			<p>
+				<label for="id_date">Reason:</label>
+				{{ form.reason }}
+			</p>
+
+			<p>
+				<label for="id_animal">Animals:</label>
+				{{ form.animal }}
+			</p>
+
+			<p>
+				<label for="id_vet">Vets:</label>
+				{{ form.vet }}
+
+			</p>
+
+			
+        
+
+			<button type="submit">Create</button>
 	</form>
 </div>
 

@@ -25,7 +25,7 @@ class Vet(models.Model):
 		return f"{self.name} ({self.specialization})"
 
 class Appointment(models.Model):
-	date = models.DateTimeField()
+	date = models.DateTimeField()  
 	reason = models.TextField()
 	animal = models.ForeignKey(Animal, on_delete=models.CASCADE)
 	vet = models.ForeignKey(Vet, on_delete=models.CASCADE)
