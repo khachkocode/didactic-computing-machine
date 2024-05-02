@@ -1,36 +1,35 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <div class="create-appointment">
 	<h2>Create Appointment</h2>
 	<form method="post">
-			{% csrf_token %}
+		{% csrf_token %}
 
-			<div class="form-group">
-				<label for="date">Date and Time</label>
-				<input type="datetime-local" name="date" class="form-control" id='datapicker' />
+		<div class="form-group">
+			<label for="date">Date and Time</label>
+			<input
+				type="datetime-local"
+				name="date"
+				class="form-control"
+				id="datapicker"
+			/>
 		</div>
 
-			<p>
-				<label for="id_date">Reason:</label>
-				{{ form.reason }}
-			</p>
+		<p>
+			<label for="id_date">Reason:</label>
+			{{ form.reason }}
+		</p>
 
-			<p>
-				<label for="id_animal">Animals:</label>
-				{{ form.animal }}
-			</p>
+		<p>
+			<label for="id_animal">Animals:</label>
+			{{ form.animal }}
+		</p>
 
-			<p>
-				<label for="id_vet">Vets:</label>
-				{{ form.vet }}
+		<p>
+			<label for="id_vet">Vets:</label>
+			{{ form.vet }}
+		</p>
 
-			</p>
-
-			
-        
-
-			<button type="submit">Create</button>
+		<button type="submit">Create</button>
 	</form>
 </div>
 

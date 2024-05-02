@@ -13,8 +13,8 @@
 		<p>{{ animal.medical_history }}</p>
 	</div>
 
-	<div class='profile-buttons'>
-		<a href="{% url 'create_animal_pdf' animal.id %}">Download PDF</a> 
+	<div class="profile-buttons">
+		<a href="{% url 'create_animal_pdf' animal.id %}">Download PDF</a>
 		<a href="{% url 'update_animal' animal.id %}">Edit</a>
 		<a href="{% url 'delete_animal' animal.id %}">Delete</a>
 	</div>

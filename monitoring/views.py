@@ -117,6 +117,7 @@ def vet_profile(request, vet_id):
     vet = get_object_or_404(Vet, id=vet_id)  
     return render(request, 'vet/vet_profile.html', {'vet': vet}) 
 
+@login_required  
 def create_appointment(request):
     form = AppointmentForm(user=request.user, data=request.POST or None)
     if request.method == 'POST' and form.is_valid(): 

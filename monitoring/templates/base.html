@@ -11,19 +11,25 @@
 			<ul>
 				<h1>Vet-Monitor</h1>
 				{% if not user.is_authenticated %}
-					<li><a href="{% url 'register' %}">Register</a></li>
-					<li><a href="{% url 'login' %}">Login</a></li>
+				<li><a href="{% url 'register' %}">Register</a></li>
+				<li><a href="{% url 'login' %}">Login</a></li>
 				{% else %}
-					<li><a href="{% url 'create_animal' %}">Create Animal Profile</a></li>
-					<li><a href="{% url 'animal_list' %}">Animal List</a></li>
-					<li><a href="{% url 'create_vet' %}">Create Vet Profile</a></li>
-					<li><a href="{% url 'vet_list' %}">Vet List</a></li>
-					<li><a href="{% url 'create_appointment' %}">Create Appointment Profile</a></li>
-					<li><a href="{% url 'appointment_list' %}">Appointment List</a></li>
+				<li><a href="{% url 'create_animal' %}">Create Animal Profile</a></li>
+				<li><a href="{% url 'animal_list' %}">Animal List</a></li>
+				<li><a href="{% url 'create_vet' %}">Create Vet Profile</a></li>
+				<li><a href="{% url 'vet_list' %}">Vet List</a></li>
+				<li>
+					<a href="{% url 'create_appointment' %}"
+						>Create Appointment Profile</a
+					>
+				</li>
+				<li><a href="{% url 'appointment_list' %}">Appointment List</a></li>
 				{% endif %}
 			</ul>
 
-			{% if user.is_authenticated %}<button><a href="{% url 'logout' %}">Logout</a></button>{% endif %}
+			{% if user.is_authenticated %}<button>
+				<a href="{% url 'logout' %}">Logout</a></button
+			>{% endif %}
 		</header>
 
 		<main>{% block content %} {% endblock %}</main>
