@@ -117,13 +117,12 @@ def vet_profile(request, vet_id):
     vet = get_object_or_404(Vet, id=vet_id)  
     return render(request, 'vet/vet_profile.html', {'vet': vet}) 
 
-@login_required
 def create_appointment(request):
-    form = AppointmentForm(request.POST or None)  # Ініціалізація форми
-    if request.method == 'POST' and form.is_valid():  # Перевірка POST-запиту
-        form.save()  # Збереження нового запису
-        return redirect('appointment_list')  # Перенаправлення після створення
-    return render(request, 'appointment/create_appointment.html', {'form': form})  # Передача форми
+    form = AppointmentForm(user=request.user, data=request.POST or None)
+    if request.method == 'POST' and form.is_valid(): 
+        form.save() 
+        return redirect('appointment_list')
+    return render(request, 'appointment/create_appointment.html', {'form': form}) 
 
 @login_required
 def appointment_list(request):

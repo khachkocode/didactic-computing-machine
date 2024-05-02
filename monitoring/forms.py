@@ -25,5 +25,8 @@ class AppointmentForm(forms.ModelForm):
         model = Appointment
         fields = ['date', 'reason', 'animal', 'vet']
 
+    def __init__(self, user, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['animal'].queryset = Animal.objects.filter(owner=user)
 
 
