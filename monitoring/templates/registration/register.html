@@ -2,8 +2,7 @@
 <div class="registerForm">
 	<h2>Реєстрація</h2>
 	<form method="POST" class="registerForm">
-		{% csrf_token %}
-		{{ form.as_p }}
+		{% csrf_token %} {{ form.as_p }}
 		<button type="submit">Реєструватися</button>
 	</form>
 </div>

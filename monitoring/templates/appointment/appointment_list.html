@@ -5,8 +5,8 @@
 	<ul>
 		{% for appointment in appointments %}
 		<li>
-			{{ appointment.date }}: {{ appointment.animal.name }} with Dr. {{
-			appointment.vet.name }} - Reason: {{ appointment.reason }}
+			{{ appointment.date }}: {{ appointment.animal.name }} with Dr.
+			{{appointment.vet.name }} - Reason: {{ appointment.reason }}
 		</li>
 		{% endfor %}
 	</ul>
